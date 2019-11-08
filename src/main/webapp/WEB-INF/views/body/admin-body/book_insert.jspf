@@ -1,0 +1,131 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+<script>
+$(function(){
+	if(${MSG == 'NULL'}) {
+		$("#user_id").addClass('is-invalid')
+		$("#text-id").css('display','block')
+	}
+	
+	$("#book_isbn").blur(function(){
+		if($("#book_isbn").val() == ""){
+			$("#book_isbn").focus()
+			$("#book_isbn").addClass('is-invalid')
+			$("#text-isbn").css('display','block')	
+		} else {
+			$("#book_isbn").removeClass('is-invalid')
+			$("#text-isbn").css('display','none')	
+		}		
+	})
+	
+	$("#book_title").blur(function(){
+		if($("#book_title").val() == ""){
+			$("#book_title").focus()
+			$("#book_title").addClass('is-invalid')
+			$("#text-title").css('display','block')	
+		} else {
+			$("#book_title").removeClass('is-invalid')
+			$("#text-title").css('display','none')	
+		}		
+	})
+	
+})
+</script>
+<c:if test="${empty bookVO}">
+	<h3>도서추가</h3>
+</c:if>
+<c:if test="${not empty bookVO}">
+	<h3>도서수정</h3>
+</c:if>	
+<form action="<c:url value='/admin/book/insert'/>" 
+		method="POST"
+		 autocomplete="off">
+<input type="hidden" name="book_seq" value=<c:out value="${bookVO.book_seq}" default="0" />  >
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">도서코드</label>
+    <input id="book_isbn" name="book_isbn" class="form-control" type="text" maxlength="13" value="${bookVO.book_isbn}">
+    <div id="text-isbn" class="invalid-feedback">도서코드를 입력해주세요.</div>
+  </fieldset>
+</div>
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">도서명</label>
+    <input id="book_title" name="book_title" class="form-control" type="text" maxlength="100" value="${bookVO.book_title}">
+    <div id="text-title" class="invalid-feedback">도서명을 입력해주세요.</div>
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">저자</label>
+    <input id="book_author" name="book_author" class="form-control" type="text" maxlength="100" value="${bookVO.book_author}">
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">출판사</label>
+    <input id="book_comp" name="book_comp" class="form-control" type="text" maxlength="100" value="${bookVO.book_comp}">
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">발행일</label>
+    <input id="book_date" name="book_date" class="form-control" type="date" maxlength="10" value="${bookVO.book_date}">
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">페이지수</label>
+    <input id="book_page" name="book_page" class="form-control" type="text" value="${bookVO.book_page}" >
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">가격</label>
+    <input id="book_price" name="book_price" class="form-control" type="text" value="${bookVO.book_price}">
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">책설명</label>
+    <textarea class="form-control" id="book_description" name="book_description" rows="5">${bookVO.book_description}</textarea>
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">이미지</label>
+    <input type="text" class="form-control" id="book_image" name="book_image" value="${bookVO.book_image}">
+  </fieldset>
+</div>
+
+<div class="form-group">
+  <fieldset>
+    <label class="control-label">재고</label>
+    <input id="book_stock" name="book_stock" class="form-control" type="text" value="${bookVO.book_stock}">
+  </fieldset>
+</div>
+
+
+<button id="book_save" type="submit" class="btn btn-primary">도서저장</button>
+
+</form>
+
+<style>
+	h3 {
+		text-align: center;
+	}
+	#book_save {
+		display:flex;
+		margin: auto ;
+	}
+</style>

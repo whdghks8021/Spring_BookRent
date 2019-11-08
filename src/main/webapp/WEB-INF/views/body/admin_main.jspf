@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+<style>
+#admin_body {
+	margin: auto;
+}
+#admin-menu {
+	margin-top:100px;
+	position: absolute;
+	-webkit-transition: all .3s lcubic-bezier(0, 0.75, 1, 1);
+	transition: all .3s cubic-bezier(0, 0.75, 1, 1);
+}
+#toggle-menu {
+	font-size: 25px;
+	color: #446E9B;
+	margin-bottom: 2px;
+	cursor: pointer;
+}
+#wrapper {
+	 -webkit-transition: all .3s lcubic-bezier(0, 0.75, 1, 1);
+	transition: all .3s cubic-bezier(0, 0.75, 1, 1);
+}
+
+.toggled {
+	display: none;
+}
+</style>
+<!-- jquery를 사용해서 만든 3rd party 라이브러리 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+
+<script type="text/javascript"> 
+function scroll_follow(id)
+{
+  $(window).scroll(function( )  //스크롤이 움직일때마다 이벤트 발생
+  { 
+      var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환합니다.
+      $(id).stop().animate({top:position+"px"}, 1); //해당 오브젝트 위치값 재설정
+   });
+}
+ scroll_follow( "#admin-menu" );
+</script> 
+<div id="admin-menu" class="list-group">
+	<i id="toggle-menu" class="fas fa-arrow-circle-left"></i>
+	<div id="wrapper">
+		<a href="<c:url value='/admin' />" class="list-group-item list-group-item-action active">
+			Infomation
+		</a>
+		<a href="<c:url value='/admin/user' />" class="list-group-item list-group-item-action">
+			회원정보관리
+		</a>
+		<a href="<c:url value='/admin/rent' />" class="list-group-item list-group-item-action">
+			대여정보관리
+		</a>
+		<a href="<c:url value='/admin/book' />" class="list-group-item list-group-item-action">
+			도서정보관리
+		</a>
+		<a href="#" class="list-group-item list-group-item-action">
+			기타메뉴
+		</a>
+	</div>
+</div>
+
+<div id="admin_body" >
+	<c:if test="${ADMIN == 'HOME'}">
+		<%@ include file="/WEB-INF/views/body/admin-body/admin_home.jspf" %>
+	</c:if>
+	<c:if test="${ADMIN == 'USER'}">
+		<%@ include file="/WEB-INF/views/body/admin-body/admin_user.jspf" %>
+	</c:if>
+	<c:if test="${ADMIN == 'RENT'}">
+		<%@ include file="/WEB-INF/views/body/admin-body/admin_rent.jspf" %>
+	</c:if>
+	<c:if test="${ADMIN == 'BOOK'}">
+		<%@ include file="/WEB-INF/views/body/admin-body/admin_book.jspf" %>
+	</c:if>
+	<c:if test="${ADMIN == 'USER_INSERT'}">
+		<%@ include file="/WEB-INF/views/body/admin-body/user_insert.jspf" %>
+	</c:if>
+	<c:if test="${ADMIN == 'USER_UPDATE'}">
+		<%@ include file="/WEB-INF/views/body/admin-body/user_update.jspf" %>
+	</c:if>
+	<c:if test="${ADMIN == 'BOOK_INSERT'}">
+		<%@ include file="/WEB-INF/views/body/admin-body/book_insert.jspf" %>
+	</c:if>
+</div>
+
+<script>
+$(function(){
+	$("#toggle-menu").click(function(e) {
+	    e.preventDefault();
+	    $("#wrapper").toggleClass("toggled");
+	    $("#toggle-menu").toggleClass("fa-arrow-circle-right")
+	    
+	});
+	
+})
+
+</script>

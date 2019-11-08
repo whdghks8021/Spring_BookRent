@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<style>
+	h3, h5 {
+		text-align: center;
+		color: #1b507e;
+	}
+	
+</style>
+<div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Wellcome!</strong>
+  관리자(${login_info.user_id})님 환영합니다.
+</div>
+
+<div class="alert alert-dismissible alert-info">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h3>도서판매WAS V1.0</h3>
+	<h5>Since : 2019-04-15</h5>
+	<h5>CopyRight &copy; whdekf8021@naver.com</h5><br />
+	<p><b>서버명 : </b><span>${pageContext.request.serverName}</span></p>
+	<p><b>포트번호 : </b><span>${pageContext.request.serverPort}</span></p>
+	<p><b>Method : </b><span>${pageContext.request.method}</span></p>
+	<p><b>Context Path : </b><span>${pageContext.request.contextPath}</span></p>
+	<p><b>Path 정보 : </b><span>${pageContext.request.pathInfo}</span></p>
+	<p><b>Path Translate : </b><span>${pageContext.request.pathTranslated}</span></p>
+	<p><b>Query String : </b><span>${pageContext.request.queryString}</span></p>
+	<p><b>Request URI : </b><span>${pageContext.request.requestURI}</span></p>
+	<p><b>Request URL : </b><span>${pageContext.request.requestURL}</span></p>
+</div>

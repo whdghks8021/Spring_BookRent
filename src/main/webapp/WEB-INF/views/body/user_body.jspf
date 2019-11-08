@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<article id="cate" class="body-box">
+	
+	<p>이책 어떠세요?
+	<div class="book-view">
+		<img>
+	</div>
+	<div class="book-view"></div>
+	<div class="book-view"></div>
+	<div class="book-view"></div>
+</article>
+
+
+<article id="rent" class="body-box">
+	<p>책나라 화제의책
+	<div class="book-view"></div>
+	<div class="book-view"></div>
+	<div class="book-view"></div>
+	<div class="book-view"></div>
+</article>
