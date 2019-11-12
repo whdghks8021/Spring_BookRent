@@ -90,6 +90,8 @@ function scroll_follow(id)
 	</c:if>
 </div>
 
+
+
 <script>
 $(function(){
 	$("#toggle-menu").click(function(e) {

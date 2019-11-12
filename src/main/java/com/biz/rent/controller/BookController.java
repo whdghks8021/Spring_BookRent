@@ -33,6 +33,7 @@ public class BookController {
 //		return "home";
 //	}
 	
+	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String book(Model model, @RequestParam(value="MSG", required=false) String msg, 
 									@RequestParam(value="OPTION", required=false) String option, 
