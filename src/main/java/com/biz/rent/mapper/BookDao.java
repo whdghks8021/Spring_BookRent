@@ -35,4 +35,5 @@ public interface BookDao {
 	
 	@Delete("DELETE FROM tbl_book WHERE book_seq = #{book_seq,jdbcType=VARCHAR}")
 	public int delete(String book_seq);
+	
 }

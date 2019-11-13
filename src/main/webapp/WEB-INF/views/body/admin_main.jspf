@@ -66,6 +66,7 @@ function scroll_follow(id)
 	</div>
 </div>
 
+
 <div id="admin_body" >
 	<c:if test="${ADMIN == 'HOME'}">
 		<%@ include file="/WEB-INF/views/body/admin-body/admin_home.jspf" %>

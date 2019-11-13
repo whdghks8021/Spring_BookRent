@@ -22,6 +22,7 @@ public class OrderSQL {
 		int code = (int)(Math.random()*99999999)+10000000; // 주문번호 만들기
 		String orderCode = today + String.valueOf(code);
 		
+		
 		SQL sql = new SQL()
 				.INSERT_INTO("tbl_order")
 				.INTO_COLUMNS("order_seq").INTO_VALUES(orderCode)

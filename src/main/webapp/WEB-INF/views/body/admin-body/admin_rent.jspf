@@ -9,6 +9,7 @@
 		text-align: center;
 	}
 	
+	
 </style>
 <h2>대여정보관리</h2>
 <button id="book_insert" type="button" class="btn btn-primary">도서등록</button>

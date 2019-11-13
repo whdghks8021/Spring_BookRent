@@ -5,6 +5,7 @@
 
 <script>
 
+
 $(function(){
 	if(${MSG == 'IDOVER'}) {
 		$("#user_id").focus()

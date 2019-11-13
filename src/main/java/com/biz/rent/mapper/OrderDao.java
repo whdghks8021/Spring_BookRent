@@ -36,4 +36,5 @@ public interface OrderDao {
 	
 	@Delete("DELETE FROM tbl_order WHERE order_seq = #{order_seq,jdbcType=VARCHAR}")
 	public int delete(String order_seq);
+	
 }

@@ -11,6 +11,7 @@ public class UserSQL {
 	}
 	
 	public String user_insert_sql() {
+		
 
 		SQL sql = new SQL().INSERT_INTO("tbl_user")
 				.INTO_COLUMNS("USER_SEQ").INTO_VALUES("SEQ_USER.NEXTVAL")

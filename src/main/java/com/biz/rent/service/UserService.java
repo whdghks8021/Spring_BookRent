@@ -11,6 +11,7 @@ import com.biz.rent.modal.UserVO;
 @Service
 public class UserService {
 
+	
 	@Autowired
 	UserDao uDao;
 	

@@ -35,4 +35,5 @@ public interface UserDao {
 	public int delete(String user_seq);
 
 	
+	
 }
