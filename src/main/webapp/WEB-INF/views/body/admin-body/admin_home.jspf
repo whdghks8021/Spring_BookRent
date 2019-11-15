@@ -16,6 +16,7 @@
   관리자(${login_info.user_id})님 환영합니다.
 </div>
 
+
 <div class="alert alert-dismissible alert-info">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <h3>도서판매WAS V1.0</h3>

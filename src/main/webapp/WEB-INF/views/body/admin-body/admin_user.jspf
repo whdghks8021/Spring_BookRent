@@ -28,6 +28,7 @@
 </style>
 
 <script>
+
 $(function(){
 	$("#user_insert").click(function(){
 		location.href = "<c:url value = '/user/insert' />"

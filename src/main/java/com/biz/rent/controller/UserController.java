@@ -34,6 +34,7 @@ public class UserController {
 	}
 	
 	
+	
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(@ModelAttribute("userVO") UserVO userVO, Model model, SessionStatus session) {
 		

@@ -10,6 +10,7 @@ public class BookSQL {
 		return sql.toString();
 	}
 	
+	
 	public String book_insert_sql() {
 		
 		SQL sql = new SQL()

@@ -94,6 +94,7 @@ function scroll_follow(id)
 
 
 <script>
+
 $(function(){
 	$("#toggle-menu").click(function(e) {
 	    e.preventDefault();

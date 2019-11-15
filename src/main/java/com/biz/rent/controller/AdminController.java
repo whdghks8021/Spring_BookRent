@@ -58,6 +58,7 @@ public class AdminController {
 		return "home";
 	}
 	
+	
 	@RequestMapping(value = "/user/search", method = RequestMethod.POST)
 	public String user_search(Model model, String option, String search) {
 		
