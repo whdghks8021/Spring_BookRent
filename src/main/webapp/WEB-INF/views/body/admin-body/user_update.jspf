@@ -86,6 +86,7 @@ $(function(){
 })
 
 </script>
+
 <h3>회원정보수정</h3>
 
 <form action="<c:url value='/user/update'/>" 

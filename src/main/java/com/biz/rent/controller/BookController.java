@@ -55,6 +55,7 @@ public class BookController {
 		model.addAttribute("BOOK_LIST",bookList);
 //		model.addAttribute("BOOK_LIST",);
 		
+		
 		return "home";
 	}
 	

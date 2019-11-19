@@ -38,6 +38,7 @@ public class UserController {
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	public String insert(@ModelAttribute("userVO") UserVO userVO, Model model, SessionStatus session) {
 		
+		
 		String userId = userVO.getUser_id();
 		
 		UserVO vo = uService.findById(userId);

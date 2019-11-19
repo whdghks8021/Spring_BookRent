@@ -36,6 +36,7 @@
 
 
 <script>
+
 $(function(){
 	
 	$("#book_insert").click(function(){

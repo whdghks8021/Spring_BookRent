@@ -126,6 +126,7 @@ $(function(){
 	
 })
 </script>
+
 <h3>회원추가</h3>
 
 <form action="<c:url value='/user/insert'/>" 
